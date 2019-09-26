@@ -1,0 +1,66 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <h1 class="display-4" id="searchtext">Find Food</h1>
+
+      <div class="input-group mb-3 lead">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="material-icons">
+                      find_in_page
+                  </i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Search food" aria-label="search"
+              aria-describedby="basic-addon1">
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="menu_items_container">
+  <div class="card-columns" id="card-columns">
+      <div class="card" *ngFor="let foodItem of foodItemsList">
+          <img class="card-img-top"
+              src="{{foodItem.imageUrl}}}" />
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-auto">
+                      <h5 class="card-title">{{foodItem.name}}</h5>
+                  </div>
+
+                  <div class="col text-right">
+                      <h6 class="card-subtitle mt-1" id="price">₹{{foodItem.price}}</h6>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <p class="card-subtitle text-muted" id="category">{{foodItem.category}}</p>
+                  </div>
+
+                  <div *ngIf="foodItem.freeDelivery" class="col card-subtitle text-right" id="freedelivery">
+                      <i class="material-icons delivery">
+                          local_shipping
+                      </i>
+                      <span class="badge badge-info ">FREE</span>
+
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col mr-auto"></div>
+                  <div class="col ml-auto mr-0 py-0 px-15 text-right">
+                      <a href="menu-item-list-customer-add-to-cart.html" role="button"
+                          class="btn btn-primary active" aria-pressed="true" id="button">
+                          <i class="material-icons" id="addtocart">
+                              add_shopping_cart
+                          </i> Add to Cart</a>
+                  </div>
+              </div>
+
+              
+
+
+
+          </div>
+      </div>
+
+  </div>
+</div>
+

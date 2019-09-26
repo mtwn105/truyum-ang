@@ -1,0 +1,56 @@
+<div class="container-fluid" id="menu_items_container">
+  <div class="card-columns" id="card-columns">
+    <div class="card">
+      <img class="card-img-top" src="{{foodItem.imageUrl}}" />
+      <div class="card-body">
+        <div class="row">
+          <div class="col-auto">
+            <h5 class="card-title">{{foodItem.name}}</h5>
+          </div>
+          <div class="col mr-auto"></div>
+          <div class="col text-right">
+            <h6 class="card-subtitle mt-1" id="price">₹{{foodItem.price}}</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-left">
+
+            <span *ngIf="foodItem.active" class="badge badge-success mr-input">Active</span>
+            <span *ngIf="!foodItem.active" class="badge badge-danger">Inctive</span>
+            <p class="card-subtitle text-muted" id="category">{{foodItem.category}}</p>
+
+          </div>
+
+          <div *ngIf="foodItem.freeDelivery" class="col card-subtitle text-right" id="freedelivery">
+            <i class="material-icons delivery">
+              local_shipping
+            </i>
+            <span class="badge badge-info ">FREE</span>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mr-auto text-left">
+            <i class="material-icons" id="launchicon">
+              access_time
+            </i>
+            <p class="card-subtitle text-muted" id="launch">Launch</p>
+            <p class="card-subtitle text-muted" id="date">{{foodItem.dateOfLaunch | date:'dd/MM/yyyy'}}</p>
+
+          </div>
+          <div class="col ml-auto mr-0 py-0 px-15 text-right">
+            <a [routerLink]="['/edit', foodItem.id]" role="button" class="btn btn-primary active" aria-pressed="true"
+              id="button">
+              <i class="material-icons" id="edit">
+                edit
+              </i> Edit </a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</div>

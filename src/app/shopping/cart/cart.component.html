@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <h3 class="text-center my-4">Cart</h3>
+  <div class="card mx-auto my-4" id="cart_card">
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let foodItem of cartItems" class="list-group-item">
+        <div class="row">
+          <div class="col mr-auto text-muted">{{foodItem.name}}</div>
+          <div class="col text-right">
+            <p class="m-0" id="price_cart">{{foodItem.price}}</p>
+            <a href="cart-notification.html"><i class="material-icons text-muted vertical">
+                delete_forever
+              </i>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="list-group-item" id="total_cart">
+        <div class="row">
+          <div class="col mr-auto">Total</div>
+          <div class="col text-right">
+            <p class="m-0" id="price_cart">{{cart.total}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
